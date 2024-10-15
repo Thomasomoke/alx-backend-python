@@ -5,7 +5,7 @@ at the same time
 """
 import asyncio
 from typing import List
-from basic_async_syntax import wait_random
+wait_random = __import__('0-basic_async_syntax').wait_random
 """
 importing required modules
 and files
