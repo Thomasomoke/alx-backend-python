@@ -14,5 +14,7 @@ importing the relevant modules
 async def async_generator() -> AsyncGenerator[float, None]:
     for i in range(10):
         await asyncio.sleep(1)
-        """generate random numbers"""
+        """generate random numbers
+        between 0 and 10
+        """
         yield random.uniform(0, 10)
