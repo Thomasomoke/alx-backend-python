@@ -5,14 +5,14 @@ loop 10 times, each time asynchronously wait 1 second
 """
 import asyncio
 import random
-from typing import List
+from typing import Generator
 """
 importing the relevant modules
 """
 
 
-async def async_generator() -> List[float]:
-    for i in range(10):
+async def async_generator() -> Generator[float, None, None]:
+    for _ in range(10):
         await asyncio.sleep(1)
         """
         generate random numbers
