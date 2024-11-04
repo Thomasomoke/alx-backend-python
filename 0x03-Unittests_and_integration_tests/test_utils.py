@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+"""
+Unit tests for the utils module.
+Tests access_nested_map for correct functionality and exception handling.
+"""
+
 import unittest
 from parameterized import parameterized
 from utils import access_nested_map
-"""
-import relevant modules for this
-project
-"""
 
 
 class TestAccessNestedMap(unittest.TestCase):
@@ -24,6 +25,19 @@ class TestAccessNestedMap(unittest.TestCase):
         Confirms it returns the expected value.
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
+
+    @parameterized.expand([
+        ({}, ("a",), "KeyError: 'a'"),
+        ({"a": 1}, ("a", "b"), "KeyError: 'b'"),
+    ])
+    def test_access_nested_map_exception
+    (self, nested_map, path, expected_message):
+        """Tests access_nested_map raises KeyError for invalid path.
+        Checks if the error message matches the expected output.
+        """
+        with self.assertRaises(KeyError) as context:
+            access_nested_map(nested_map, path)
+        self.assertEqual(str(context.exception), expected_message)
 
 
 if __name__ == "__main__":
