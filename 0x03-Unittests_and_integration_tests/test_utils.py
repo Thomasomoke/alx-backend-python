@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-"""
-Unit tests for the utils module.
-Tests access_nested_map for correct functionality and exception handling.
-"""
 
 import unittest
 from parameterized import parameterized
 from utils import access_nested_map
+"""
+importing relevant modules
+and files
+"""
 
 
 class TestAccessNestedMap(unittest.TestCase):
